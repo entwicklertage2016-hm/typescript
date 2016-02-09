@@ -33,6 +33,8 @@ gulp_serve.dependsOn bowerDependencies
 gulp_serve.dependsOn installGulp
 bowerDependencies.dependsOn npmInstall
 
+gulp_testwatch.dependsOn bowerDependencies
+gulp_testwatch.dependsOn installGulp
 
 node {
     // Version of node to use.

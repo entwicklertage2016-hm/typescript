@@ -23,7 +23,7 @@ gulp.task('test', function() {
     .pipe(gulp.dest(config.buildPath));
 });
 
-gulp.task('test:watch', function() {
+gulp.task('testwatch', function() {
   config.buildPath = config.testPath;
   var server = {
     baseDir: config.buildPath
@@ -31,7 +31,9 @@ gulp.task('test:watch', function() {
 
   browserSync.instance = browserSync.init({
     startPath: '/test.html',
-    server: server
+    server: server,
+    port: 3003,
+    ui: false
   });
   gulp.watch(config.srcPath + "/**", ['reloadTest']);
   gulp.watch(config.testSrcPath, ['reloadTest']);
